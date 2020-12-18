@@ -31,7 +31,9 @@ public class LoginService {
     }
 
 
-    public User obtainProfile() {
-        return null;
+    public Call<User> getProfile(String token) {
+        val userApi = retrofit.create(UserRepos.class);
+
+        return  userApi.getProfile("Bearer "+token);
     }
 }

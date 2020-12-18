@@ -63,7 +63,7 @@ public class AuthActivity extends AppCompatActivity {
 
     }
     public void toCompanyActivity(){
-        Intent intent = new Intent(AuthActivity.this, CompanyActivity.class);
+        Intent intent = new Intent(AuthActivity.this, NavActivity.class);
         startActivity(intent);
     }
 }

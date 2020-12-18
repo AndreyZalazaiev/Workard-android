@@ -36,7 +36,7 @@
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/log_out"
+        android:id="@+id/nav_slideshow"
         android:name="andrew.projects.workard.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
