@@ -36,9 +36,10 @@ public class AuthActivity extends AppCompatActivity {
         loginService.login(log, pass).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                settings.edit().putString("token", response.body()).apply();
-                Log.v("Response result:", "token stored");
-                toCompanyActivity();
+                if (response.body()!=null) {
+                    settings.edit().putString("token", response.body()).apply();
+                    toCompanyActivity();
+                }
 
             }
             @Override
