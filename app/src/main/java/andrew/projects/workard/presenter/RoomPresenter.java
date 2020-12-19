@@ -20,6 +20,7 @@ import andrew.projects.workard.Domain.Device;
 import andrew.projects.workard.Domain.Room;
 import andrew.projects.workard.R;
 import andrew.projects.workard.Service.CompanyService;
+import andrew.projects.workard.Util.Constants;
 import andrew.projects.workard.view.RoomView;
 import lombok.val;
 import moxy.InjectViewState;
@@ -40,7 +41,7 @@ public class RoomPresenter extends MvpPresenter<RoomView> {
     public RoomPresenter(Context context, List<Room> rooms) {
         this.context = context;
         this.rooms = rooms;
-        settings = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        settings = context.getSharedPreferences(Constants.prefName, Context.MODE_PRIVATE);
         authToken = getAuthToken();
         loadHotSpots();
     }
@@ -90,7 +91,7 @@ public class RoomPresenter extends MvpPresenter<RoomView> {
                     devices.setText(devices.getText() + " " + d.getDeviceCode());
                 }
 
-                devices.setText("Device list: " + devices.getText().toString().trim().replaceAll(" ",","));
+                devices.setText("Device list: " + devices.getText().toString().trim().replaceAll(" ", ","));
             } else devices.setText("No devices connected");
             devices.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
 

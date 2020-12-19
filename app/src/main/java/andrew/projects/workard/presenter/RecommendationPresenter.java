@@ -17,6 +17,7 @@ import andrew.projects.workard.Domain.Company;
 import andrew.projects.workard.Domain.Recommendation;
 import andrew.projects.workard.R;
 import andrew.projects.workard.Service.CompanyService;
+import andrew.projects.workard.Util.Constants;
 import andrew.projects.workard.view.RecommendationView;
 import moxy.InjectViewState;
 import moxy.MvpPresenter;
@@ -35,7 +36,7 @@ public class RecommendationPresenter extends MvpPresenter<RecommendationView> {
 
     public RecommendationPresenter(Context context) {
         this.context = context;
-        settings = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        settings = context.getSharedPreferences(Constants.prefName, Context.MODE_PRIVATE);
         authToken = getAuthToken();
         getCompaniesList();
 

@@ -17,6 +17,7 @@ import java.util.List;
 import andrew.projects.workard.Domain.Company;
 import andrew.projects.workard.R;
 import andrew.projects.workard.Service.CompanyService;
+import andrew.projects.workard.Util.Constants;
 import andrew.projects.workard.view.CompanyView;
 import moxy.InjectViewState;
 import moxy.MvpPresenter;
@@ -35,7 +36,7 @@ public class CompanyPresenter extends MvpPresenter<CompanyView> {
 
     public CompanyPresenter(Context context) {
         this.context = context;
-        settings = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        settings = context.getSharedPreferences(Constants.prefName, Context.MODE_PRIVATE);
         authToken = getAuthToken();
         getCompaniesList();
 

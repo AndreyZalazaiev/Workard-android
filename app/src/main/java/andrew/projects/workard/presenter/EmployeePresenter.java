@@ -19,6 +19,7 @@ import andrew.projects.workard.Domain.Company;
 import andrew.projects.workard.Domain.Employee;
 import andrew.projects.workard.R;
 import andrew.projects.workard.Service.CompanyService;
+import andrew.projects.workard.Util.Constants;
 import andrew.projects.workard.view.EmployeeView;
 import moxy.InjectViewState;
 import moxy.MvpPresenter;
@@ -37,7 +38,7 @@ public class EmployeePresenter extends MvpPresenter<EmployeeView> {
 
     public EmployeePresenter(Context context) {
         this.context = context;
-        settings = context.getSharedPreferences("MyPref", Context.MODE_PRIVATE);
+        settings = context.getSharedPreferences(Constants.prefName, Context.MODE_PRIVATE);
         authToken = getAuthToken();
         getCompaniesList();
 
@@ -95,19 +96,19 @@ public class EmployeePresenter extends MvpPresenter<EmployeeView> {
                 card.setOrientation(LinearLayout.VERTICAL);
                 card.setBackgroundResource(R.drawable.round_corners);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(450, ViewGroup.LayoutParams.MATCH_PARENT);
-                layoutParams.setMargins(30,30,30,30);
+                layoutParams.setMargins(30, 30, 30, 30);
 
                 card.setLayoutParams(layoutParams);
-                card.setPadding(40,40,40,40);
+                card.setPadding(40, 40, 40, 40);
 
                 TextView empInfo = new TextView(context);
-                empInfo.setText(Html.fromHtml("<b>"+ e.getName() + "</b><br/>" + e.getOccupation()));
-                empInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP,22);
+                empInfo.setText(Html.fromHtml("<b>" + e.getName() + "</b><br/>" + e.getOccupation()));
+                empInfo.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
                 empInfo.setTextColor(Color.BLACK);
 
                 TextView RFIDtext = new TextView(context);
-                RFIDtext.setText(Html.fromHtml("RFID:"+e.getRFIDtag()+""));
-                RFIDtext.setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
+                RFIDtext.setText(Html.fromHtml("RFID:" + e.getRFIDtag() + ""));
+                RFIDtext.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
 
                 card.addView(empInfo);
                 card.addView(RFIDtext);
