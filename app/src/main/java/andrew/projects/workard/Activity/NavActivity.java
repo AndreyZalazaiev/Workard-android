@@ -69,15 +69,14 @@ public class NavActivity extends MvpAppCompatActivity implements NavView, Naviga
         NavigationUI.setupWithNavController(navigationView, navController);
         setNavigationViewListener();
         context = getApplicationContext();
+        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_company));
     }
 
     @Override
     public void getProfileData(User u) {
         TextView login = findViewById(R.id.Login);
         TextView email = findViewById(R.id.Email);
-        ImageView userPic = findViewById(R.id.imageView);
 
-        //userPic.setImageResource(R.drawable.avatar);
         login.setText(u.getUsername());
         email.setText(u.getEmail());
     }

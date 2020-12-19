@@ -69,7 +69,7 @@ public class CompanyPresenter extends MvpPresenter<CompanyView> {
 
             MaterialCardView card = new MaterialCardView(context);
 
-            card.setBackgroundResource(R.drawable.gradient);
+            card.setBackgroundResource(R.drawable.round_corners);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             layoutParams.setMargins(30, 20, 30, 0);

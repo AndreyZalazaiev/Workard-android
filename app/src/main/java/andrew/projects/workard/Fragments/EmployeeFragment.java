@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 
@@ -20,6 +22,8 @@ import moxy.presenter.ProvidePresenter;
 public class EmployeeFragment extends MvpAppCompatFragment implements EmployeeView {
     @InjectPresenter
     EmployeePresenter employeePresenter;
+    private View v;
+
     @ProvidePresenter
     EmployeePresenter provideDetailsPresenter() {
         return new EmployeePresenter(getContext());
@@ -34,6 +38,20 @@ public class EmployeeFragment extends MvpAppCompatFragment implements EmployeeVi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_employee, container, false);
+        v = inflater.inflate(R.layout.fragment_employee, container, false);
+        return v;
+    }
+
+    @Override
+    public void drawListOfCompanies(LinearLayout companies) {
+        LinearLayout container =v.findViewById(R.id.companies);
+        container.addView(companies);
+    }
+
+    @Override
+    public void drawEmployeesForEachCompanyChecked(GridLayout employees) {
+        LinearLayout container =v.findViewById(R.id.employees);
+        container.removeAllViewsInLayout();
+        container.addView(employees);
     }
 }

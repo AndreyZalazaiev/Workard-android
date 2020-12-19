@@ -12,7 +12,7 @@ public class Employee extends BaseEntity {
     private String name;
     @SerializedName("occupation")
     private String occupation;
-    @SerializedName("RFIDtag")
+    @SerializedName("rfidtag")
     private String RFIDtag;
     @SerializedName("idCompany")
     private Integer idCompany;

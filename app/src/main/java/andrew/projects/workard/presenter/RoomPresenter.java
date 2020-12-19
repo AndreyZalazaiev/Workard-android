@@ -3,6 +3,7 @@ package andrew.projects.workard.presenter;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.Html;
+import android.util.TypedValue;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -42,7 +43,7 @@ public class RoomPresenter extends MvpPresenter<RoomView> {
         ) {
             MaterialCardView card = new MaterialCardView(context);
 
-            card.setBackgroundResource(R.drawable.gradient);
+            card.setBackgroundResource(R.drawable.round_corners);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             layoutParams.setMargins(30, 20, 30, 0);
@@ -55,14 +56,21 @@ public class RoomPresenter extends MvpPresenter<RoomView> {
 
             TextView roomDetails = new TextView(context);
             roomDetails.setText(Html.fromHtml("<b>" + r.getName() + "</b><br/>Recommended value: " + r.getRecommendedValue()));
+            roomDetails.setTextSize(TypedValue.COMPLEX_UNIT_SP, 22);
             roomDetails.setTextColor(Color.BLACK);
 
             TextView devices = new TextView(context);
-            for (Device d : r.getDevices()
-            ) {
-                devices.setText(devices.getText() + " "+d.getDeviceCode());
+            if (r.getDevices().size() != 0) {
+                for (Device d : r.getDevices()
+                ) {
+                    devices.setText(devices.getText() + " " + d.getDeviceCode());
+                }
+
+                devices.setText("Device list: " + devices.getText());
             }
-            devices.setText("Device list: " + devices.getText());
+            else devices.setText("No devices connected");
+            devices.setPadding(20,0,0,0);
+            devices.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 
 
             cardContent.addView(roomDetails);
