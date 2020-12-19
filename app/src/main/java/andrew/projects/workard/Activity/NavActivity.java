@@ -22,6 +22,8 @@ import com.google.android.material.navigation.NavigationView;
 
 import andrew.projects.workard.Domain.User;
 import andrew.projects.workard.Fragments.CompanyFragment;
+import andrew.projects.workard.Fragments.EmployeeFragment;
+import andrew.projects.workard.Fragments.RecommendationFragment;
 import andrew.projects.workard.R;
 import andrew.projects.workard.Service.CompanyService;
 import andrew.projects.workard.presenter.NavPresenter;
@@ -116,8 +118,20 @@ public class NavActivity extends MvpAppCompatActivity implements NavView, Naviga
                         .commit();
                 break;
             }
-            case R.id.nav_room: {
-                //
+            case R.id.nav_empl: {
+                actionBar.setTitle("Employees");
+                actionBar.setIcon(R.drawable.ic_person_white_24dp);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new EmployeeFragment())
+                        .commit();
+                break;
+            }
+            case R.id.nav_recom: {
+                actionBar.setTitle("Recommendations");
+                actionBar.setIcon(R.drawable.ic_watch_later_white_24dp);
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new RecommendationFragment())
+                        .commit();
                 break;
             }
         }

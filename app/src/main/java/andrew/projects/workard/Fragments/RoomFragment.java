@@ -39,7 +39,7 @@ public class RoomFragment extends MvpAppCompatFragment implements RoomView {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_room, container, false);
         val actionBar = ((NavActivity) getActivity()).getSupportActionBar();
-        actionBar.setTitle("Room");
+        actionBar.setTitle("Rooms");
         actionBar.setIcon(R.drawable.ic_group_work_black_24dp);
         roomsContainer = v.findViewById(R.id.rooms);
         return v;

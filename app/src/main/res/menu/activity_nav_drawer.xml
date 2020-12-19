@@ -2,20 +2,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
+    <item android:title="General">
+        <menu>
+            <group
+                android:checkableBehavior="single"
+                android:menuCategory="container">
+                <item
+                    android:id="@+id/nav_company"
+                    android:icon="@drawable/ic_menu_camera"
+                    android:title="Company" />
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_company"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Company" />
+                <item
+                    android:id="@+id/nav_empl"
+                    android:icon="@drawable/ic_person_black_24dp"
+                    android:title="Employees" />
 
-        <item
-            android:id="@+id/nav_room"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Room" />
+                <item
+                    android:id="@+id/nav_recom"
+                    android:icon="@drawable/ic_watch_later_black_24dp"
+                    android:title="Recommendations" />
+            </group>
+        </menu>
+    </item>
+    <group
+        android:checkableBehavior="single"
+        android:menuCategory="system">
         <item
             android:id="@+id/nav_log_out"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
             android:title="Log out" />
     </group>
+
 </menu>
