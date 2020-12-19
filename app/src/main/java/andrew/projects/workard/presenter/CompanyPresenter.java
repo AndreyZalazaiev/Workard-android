@@ -1,25 +1,20 @@
 package andrew.projects.workard.presenter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.text.Html;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
 
 import andrew.projects.workard.Domain.Company;
-import andrew.projects.workard.Fragments.CompanyFragment;
 import andrew.projects.workard.R;
 import andrew.projects.workard.Service.CompanyService;
 import andrew.projects.workard.view.CompanyView;

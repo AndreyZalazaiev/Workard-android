@@ -1,16 +1,10 @@
 package andrew.projects.workard.presenter;
 
-import android.util.Log;
-
-import java.util.List;
-
-import andrew.projects.workard.Domain.Company;
 import andrew.projects.workard.Domain.User;
 import andrew.projects.workard.Service.LoginService;
 import andrew.projects.workard.view.NavView;
 import moxy.InjectViewState;
 import moxy.MvpPresenter;
-import moxy.presenter.InjectPresenter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
